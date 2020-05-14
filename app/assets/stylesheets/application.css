@@ -23,5 +23,22 @@ h2{
 }
 p{
 	margin: 0 0 40px 60px;
-	line-height: 60px;
+	line-height: 50px;
+}
+.bookers{
+	position: absolute;
+	top: 40px;
+	left: 40px
+}
+.new-form{
+	margin-top: 40px;
+}
+.form-title{
+	margin-bottom: 20px;
+}
+.field{
+	line-height: 50px;
+}
+.link{
+	margin-left: 40px;
 }

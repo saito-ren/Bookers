@@ -1,3 +1,4 @@
+<div class="bookers">
 <h1>Books</h1>
 
 <table>
@@ -14,25 +15,33 @@
       <tr>
         <td><%= book.title %></td>
         <td><%= book.body %></td>
-        <td><%= link_to 'Show', book_path %></td>
-        <td><%= link_to 'Edit', edit_book_path(book.id) %></td>
-        <td><%= link_to 'Destroy', book_path, method: :delete, "data-confirm" => "Are you sure?"  %></td>
+    
+        <td class="link"><%= link_to 'Show', book_path(book.id) %></td>
+        <td class="link"><%= link_to 'Edit', edit_book_path(book.id) %></td>
+        <td class="link"><%= link_to 'Destroy', book_path(book.id), method: :delete, "data-confirm" => "Are you sure?"  %></td>
+    
       </tr>
     <% end %>
   </tbody>
 </table>
 
-
-<h3>New book</h3>
+<div class="new-form">
+<h3 class="form-title">New book</h3>
 <!-- form_for部分 -->
 <%= form_for(@book) do |f| %>
 
-<h4>Title</h4>
-<%= f.text_field :title %>
+<div class="field">
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title %>
+   </div>
+<div class="field">
+  <%= f.label :body, "Body" %>
+  <%= f.text_area :body %>
+</div>
 
-<h4>Body</h4>
-<%= f.text_area :body %>
 
 <%= f.submit 'Create Book' %>
 
 <% end %>
+</div>
+</div>
