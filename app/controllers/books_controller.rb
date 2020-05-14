@@ -19,9 +19,23 @@ class BooksController < ApplicationController
   	@blog = Blog.find(params[:id])
   end
 
+  def update
+  	book = Book.find(params[:id])
+  	book.update(book_params)
+  	redirect_to books_path(book)
+  end
+
+  def destroy
+  	book = Book.find(params[:id])
+  	book.destroy
+  	redirect_to books_path
+  end
+
   def top
   end
 
-  private book_params
-  params.require(:book).permit(:title,:body)
+  private
+  def book_params
+  params.require(:book).permit(:title, :body)
+  end
 end
