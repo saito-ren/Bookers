@@ -42,3 +42,9 @@ p{
 .link{
 	margin-left: 40px;
 }
+.success{
+	color: green;
+}
+.show-item{
+	margin-bottom: 30px;
+}
